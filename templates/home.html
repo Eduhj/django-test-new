@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Django é melhor que PHP</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+  <header>
+    <h1>冂丁刄几彑囗</h1>
+    <p>🅳🅹🅰🅽🅶🅾 🅳🅹🅰🅽🅶🅾 🅳🅹🅰🅽🅶🅾</p>
+  </header>
+
+  <main>
+
+    <nav aria-label="Seções da página">
+      <ul>
+        <li><a href="#apresentacao">Apresentação</a></li>
+        <li><a href="#imagens">Imagens</a></li>
+        <li><a href="#video">Vídeo</a></li>
+        <li><a href="#conteudo-externo">Conteúdo Externo</a></li>
+        <li><a href="#postagens">Postagens</a></li>
+      </ul>
+    </nav>
+
+    <a href="/form">ADICIONAR</a>
+
+    <section id="apresentacao">
+      <h2>Apresentação</h2>
+      <p>
+        Esta página foi construída utilizando as tags semânticas do HTML5,
+        como <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>,
+        <code>&lt;section&gt;</code> e <code>&lt;footer&gt;</code>.
+        O objetivo é demonstrar o uso correto de imagem, vídeo local e
+        conteúdo externo incorporado por meio de <code>&lt;iframe&gt;</code>.
+      </p>
+    </section>
+
+    <section id="imagens">
+      <h2>Imagens</h2>
+      <figure>
+        <img src="https://conceito.de/wp-content/uploads/2022/08/hd-wallpaper-540115_1280.jpg"
+          alt="Paisagem montanhosa ao entardecer, com céu alaranjado e um lago refletindo as montanhas" width="600">
+        <figcaption>Paisagem montanhosa capturada ao entardecer.</figcaption>
+      </figure>
+    </section>
+
+    <section id="video">
+      <h2>Vídeo</h2>
+      <video controls width="600">
+        <source src="/media/SexBobOmb.mp4" type="video/mp4">
+        Seu navegador não suporta a reprodução de vídeos em HTML5.
+      </video>
+    </section>
+
+    <section id="conteudo-externo">
+      <h2>Conteúdo Externo</h2>
+      <p>Abaixo, um vídeo do YouTube incorporado como conteúdo externo:</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/XAzVlnPDVd0?si=vi-cCZ_5uCOYb9TR"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+      <p>E também um mapa incorporado:</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5340680.446808293!2d-54.58616910387674!3d-17.932827195065187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e6726b2b9f27%3A0xf5a8469ebc84d2c1!2sCampo%20Grande%2C%20MS!5e0!3m2!1spt-BR!2sbr!4v1787091989864!5m2!1spt-BR!2sbr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </section>
+
+    <section id="postagens">
+      <h2>Postagens</h2>
+      <hr>
+      {% for p in posts %}
+        <div>
+          <h3>{{p.nome}}</h3>
+          <b>{{p.assunto}}</b>
+          <p class="mensagem">{{p.mensagem}}</p>
+          <em>{{p.data}}</em>
+          <a href="{% url 'remove' p.id %}" style="text-decoration: none;">🗑️</a>
+          <a href="{% url 'edit' p.id %}" style="text-decoration: none;">✏️</a>
+          <hr>
+        </div>
+      {% endfor %}
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Minha Página de Mídias. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+
+</html>
