@@ -28,6 +28,11 @@ footer {
 	margin-inline: auto;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+}
+
 header {
 	padding: 3rem 0 1.5rem;
 }
@@ -60,6 +65,7 @@ form {
 
 nav ul {
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 0.75rem 1.25rem;
 	margin: 0;
@@ -78,6 +84,7 @@ a:hover {
 
 main > a,
 input[type="submit"] {
+	align-self: flex-start;
 	display: inline-block;
 	padding: 0.7rem 1rem;
 	margin-bottom: 1.5rem;
@@ -122,21 +129,30 @@ figcaption {
 	overflow-x: auto;
 }
 
-section > div {
+.lista-posts {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
 	padding: 1rem 0;
 	border-bottom: 1px solid var(--border);
 }
 
-section > div:last-child {
-	border-bottom: 0;
+.post h3 {
+	margin: 0;
 }
 
-section > div h3 {
-	margin-top: 0;
+.post-acoes {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 0.75rem;
 }
 
-section > div a {
-	margin-left: 0.75rem;
+.post-acoes a {
 	text-decoration: none;
 }
 

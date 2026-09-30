@@ -75,18 +75,22 @@
 
     <section id="postagens">
       <h2>Postagens</h2>
-      <hr>
-      {% for p in posts %}
-        <div>
+
+      <div class="lista-posts">
+        {% for p in posts %}
+        <div class="post">
           <h3>{{p.nome}}</h3>
           <b>{{p.assunto}}</b>
           <p class="mensagem">{{p.mensagem}}</p>
           <em>{{p.data}}</em>
-          <a href="{% url 'remove' p.id %}" style="text-decoration: none;">🗑️</a>
-          <a href="{% url 'edit' p.id %}" style="text-decoration: none;">✏️</a>
-          <hr>
+
+          <div class="post-acoes">
+            <a href="{% url 'remove' p.id %}">🗑️</a>
+            <a href="{% url 'edit' p.id %}">✏️</a>
+          </div>
         </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </section>
 
   </main>
