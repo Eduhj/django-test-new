@@ -129,6 +129,14 @@ figcaption {
 	overflow-x: auto;
 }
 
+.conteudo-externo {
+	text-align: center;
+}
+
+.conteudo-externo iframe {
+	margin-inline: auto;
+}
+
 .lista-posts {
 	display: flex;
 	flex-direction: column-reverse;
